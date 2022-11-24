@@ -2,6 +2,8 @@ import {
   Component,
   // OnInit, OnDestroy --> Unnecessary
 } from '@angular/core';
+import { CommonModule } from '@angular/common';
+
 import { ItemService } from './items.service';
 
 @Component({
