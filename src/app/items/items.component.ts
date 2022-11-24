@@ -3,26 +3,25 @@ import {
   // OnInit, OnDestroy --> Unnecessary
 } from '@angular/core';
 
-import { Subscription } from 'rxjs';
 import { Item } from './item';
-
-import { ProductService } from './product.service';
+import { ItemService } from './items.service';
 
 @Component({
-  templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css'],
+  selector: 'app-items',
+  templateUrl: './items.component.html',
+  styleUrls: ['./items.component.css'],
 })
 // implements OnInit, OnDestroy  --> Unnecessary
-export class ProductListComponent {
-  pageTitle = 'Product List';
+export class ItemsComponent {
+  pageTitle = 'Items List';
   errorMessage = '';
-  categories: ProductCategory[] = [];
+  //categories: ItemsCategory[] = [];
 
   //products: Product[] = [];
-  products$ = this.productService.getProducts();
+  items$ = this.itemService.getItems();
   // sub!: Subscription; --> Unnecessary
 
-  constructor(private productService: ProductService) {}
+  constructor(private itemService: ItemService) {}
 
   /* --> Unnecessary
   ngOnInit(): void {

@@ -8,12 +8,12 @@ import { Item } from './item';
 @Injectable({
   providedIn: 'root'
 })
-export class ProductService {
+export class ItemService {
   private itemsUrl = 'api/items';
   
   constructor(private http: HttpClient) { }
 
-  getProducts(): Observable<Item[]> {
+  getItems(): Observable<Item[]> {
     return this.http.get<Item[]>(this.itemsUrl)
       .pipe(
         tap(data => console.log('Items: ', JSON.stringify(data))),

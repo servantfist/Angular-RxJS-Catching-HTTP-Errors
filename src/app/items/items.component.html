@@ -1,0 +1,18 @@
+<h2>{{ pageTitle }}</h2>
+<div *ngIf='items$ | async as items'>
+  <table>
+    <tr>
+    <th>Num</th>
+    <th>Name</th>
+    <th>Desc</th>
+    </tr>
+    <tr *ngFor='let item of items'>
+       <td>{{ item.id }}</td>
+       <td>{{ item.name }}</td>
+       <td>{{ item.desc }}</td>
+    </tr>
+    
+  
+  </table>
+
+</div>
