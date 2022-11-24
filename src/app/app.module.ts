@@ -9,6 +9,8 @@ import { AppComponent } from './app.component';
 import { HelloComponent } from './hello.component';
 import { ItemsComponent } from './items/items.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HttpErrorHandler } from './http-error-handler.service';
+import { MessageService } from './message.service';
 
 
 @NgModule({
@@ -26,7 +28,15 @@ import { HttpClientModule } from '@angular/common/http';
         put204: false // return entity after PUT/update
       }
     ) ],
-  declarations: [ AppComponent, HelloComponent, ItemsComponent ],
+  declarations: [ 
+    AppComponent,
+    HelloComponent,
+    ItemsComponent 
+  ],
+  providers: [
+    HttpErrorHandler,
+    MessageService,
+  ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
