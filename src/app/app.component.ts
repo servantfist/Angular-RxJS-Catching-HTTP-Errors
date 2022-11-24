@@ -7,7 +7,7 @@ import { of, from, map, pipe, tap, catchError } from 'rxjs';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-  name = 'Angular ' + VERSION.major + ' RxJs Catching Errors in Angular';
+  name = 'Angular ' + VERSION.major + ' RxJs Catching Errors';
 
   ngOnInit() {
     of(1, 2, 3, 4, 5, 6, 7, 8, 9)
