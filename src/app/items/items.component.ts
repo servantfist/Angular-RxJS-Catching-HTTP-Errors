@@ -2,8 +2,6 @@ import {
   Component,
   // OnInit, OnDestroy --> Unnecessary
 } from '@angular/core';
-
-import { Item } from './item';
 import { ItemService } from './items.service';
 
 @Component({

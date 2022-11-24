@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -13,32 +14,32 @@ import { HttpErrorHandler } from './http-error-handler.service';
 import { MessageService } from './message.service';
 import { MessagesComponent } from './messages/messages.component';
 
-
 @NgModule({
-  imports:      [ 
+  imports: [
     BrowserModule,
+    CommonModule,
     FormsModule,
     HttpClientModule,
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, {
-        dataEncapsulation: false,
-        passThruUnknownUrl: true,
-        put204: false // return entity after PUT/update
-      }
-    ) ],
-  declarations: [ 
+    HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
+      dataEncapsulation: false,
+      passThruUnknownUrl: true,
+      put204: false, // return entity after PUT/update
+    }),
+  ],
+  exports: [
+    CommonModule,
+    FormsModule
+  ],
+  declarations: [
     AppComponent,
     HelloComponent,
     ItemsComponent,
     MessagesComponent,
   ],
-  providers: [
-    HttpErrorHandler,
-    MessageService,
-  ],
-  bootstrap:    [ AppComponent ]
+  providers: [HttpErrorHandler, MessageService],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
