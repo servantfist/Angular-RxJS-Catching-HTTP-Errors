@@ -30,6 +30,7 @@ export class ItemService {
   getItems(): Observable<Item[]> {
     return this.http.get<Item[]>(this.itemsUrl)
       .pipe(
+        tap(data => console.log(JSON.stringify(data))),
         catchError(this.handleError('getItems', []))
       );
   }
