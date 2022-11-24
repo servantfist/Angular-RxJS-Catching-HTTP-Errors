@@ -11,6 +11,7 @@ import { ItemsComponent } from './items/items.component';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpErrorHandler } from './http-error-handler.service';
 import { MessageService } from './message.service';
+import { MessagesComponent } from './messages/messages.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { MessageService } from './message.service';
   declarations: [ 
     AppComponent,
     HelloComponent,
-    ItemsComponent 
+    ItemsComponent,
+    MessagesComponent,
   ],
   providers: [
     HttpErrorHandler,
